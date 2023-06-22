@@ -42,7 +42,7 @@ const Product: FC<ProductProps> = (
                                 variants={slideFromTop}
                                 transition={duration}
                                 custom={3}
-                                className={cn(s.name, 'text-center', order == 'reversed' ? '2xl:text-left' : '2xl:text-right')}
+                                className={cn(s.name, 'text-center', order == 'reversed' ? 'xl:text-left' : 'xl:text-right')}
                             >{name}</motion.h2>
                             <div className={cn(s.content, order == 'reversed' && [s.reversed])}>
                                 <motion.div
@@ -88,7 +88,7 @@ const Product: FC<ProductProps> = (
                                     <Image src={img} alt="Can" />
                                 </div>
                             </div>
-                            <div className={cn(s.options, order == 'reversed' ? 'flex-row' : 'flex-row-reverse')}>
+                            <div className={cn(s.options, order == 'reversed' ? 'flex-col xl:flex-row' : 'flex-col xl:flex-row-reverse')}>
                                 <h3 className={s.symbols}>{symbols}</h3>
                                 <div className={s.displacement}>{
                                     displacement.map(d =>
