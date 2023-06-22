@@ -1,0 +1,73 @@
+.wrapper {
+  grid-template-columns: auto minmax(320px, 1800px) auto;
+  grid-template-areas: ". content .";
+
+  @apply grid py-[5px] lg:py-[10px] 2xl:py-[20px] px-[40px];
+}
+
+.container {
+  grid-area: content;
+  @apply flex items-center justify-between xl:justify-start xl:gap-[170px] w-full;
+
+  .logo {
+    @apply max-w-[182px] sm:max-w-[202px] lg:max-w-[222px] xl:max-w-[252px] 2xl:max-w-[292px];
+  }
+
+  .navbar {
+    @apply hidden xl:flex items-center gap-[20px] overflow-x-visible;
+
+    a {
+      @apply text-[24px] leading-[24px] font-bold relative overflow-x-visible;
+
+      &::before {
+        content: "";
+        @apply absolute left-[-2px] right-[-2px] bottom-[-6px] h-[3px]
+        bg-[#FF0000] opacity-0 transition-all;
+      }
+
+      &:hover::before {
+        @apply opacity-100;
+      }
+    }
+  }
+
+  .overlay {
+    @apply hidden absolute left-0 right-0 bottom-0 top-0;
+    @apply bg-[#00000060] z-[10];
+    @apply transition-all;
+
+    &.visible {
+      @apply block xl:hidden;
+      animation: .2s overlay;
+    }
+  }
+
+  @keyframes overlay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .sidebarMenu {
+    @apply flex flex-col items-start xl:hidden pt-[80px] px-[20px];
+    @apply fixed top-0 right-0 bottom-0;
+    @apply w-[250px] z-[20];
+    @apply transition-all;
+
+    .background {
+      @apply absolute top-0 right-0 bottom-0;
+      @apply w-[300px] bg-[#fff];
+    }
+
+    &.open {
+      @apply translate-x-0;
+    }
+
+    &.closed {
+      @apply translate-x-[100%];
+    }
+  }
+}

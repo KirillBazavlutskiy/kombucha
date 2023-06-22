@@ -1,0 +1,16 @@
+.container {
+  @apply w-1/2 flex flex-col items-start gap-[240px] text-[#fff] z-[2];
+
+  h2 {
+    @apply text-[96px] font-normal leading-[100px];
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    @apply w-full text-[32px] font-normal leading-[50px];
+  }
+
+  h3 {
+    @apply text-[64px] font-normal leading-[100px];
+  }
+}

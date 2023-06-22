@@ -1,0 +1,22 @@
+.wrapper {
+    @apply grid min-h-[100vh] overflow-hidden;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "body"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.body {
+    grid-area: body;
+}
+
+.footer {
+    grid-area: footer;
+}

@@ -1,0 +1,131 @@
+.wrapper {
+  grid-template-columns: auto minmax(320px, 1800px) auto;
+  grid-template-areas: ". content .";
+
+  @apply grid px-[40px] bg-[#D09821];
+  background-image: url(../../images/sakura_where-to-find.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 70% cover;
+}
+
+.container {
+  grid-area: content;
+  @apply flex flex-col gap-[20px] w-full py-[40px] text-[#000];
+
+  .caption {
+    @apply leading-[100%] font-thin text-[#fff];
+    @apply 2xl:text-[96px] xl:text-[86px] lg:text-[78px] sm:text-[70px] text-[64px];
+  }
+
+  .content {
+    @apply grid items-center justify-between w-full gap-[30px];
+    grid-template-columns: auto auto;
+
+    @media (max-width: 1260px) {
+      grid-template-columns: 1fr;
+    }
+
+    .list {
+      @apply grid gap-[50px] list-none pl-[30px] py-[20px];
+
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+      li {
+        @apply flex overflow-x-visible;
+
+        @media (max-width: 1260px) {
+          @apply justify-center items-center;
+        }
+
+        button {
+          @apply flex flex-col relative overflow-x-visible;
+
+          @media (max-width: 1260px) {
+            @apply justify-center items-center;
+          }
+
+          h3 {
+            @apply overflow-x-visible;
+            @apply 2xl:text-[48px] xl:text-[44px] lg:text-[40px] sm:text-[38px] text-[36px];
+            @apply 2xl:leading-[50px] xl:leading-[46px] lg:leading-[42px] sm:leading-[40px] leading-[38px];
+          }
+
+          span {
+            @apply overflow-x-visible;
+            @apply 2xl:text-[24px] xl:text-[22px] lg:text-[20px] sm:text-[18px] text-[16px];
+            @apply 2xl:leading-[26px] xl:leading-[24px] lg:leading-[22px] sm:leading-[20px] leading-[18px];
+          }
+
+          &::before {
+            pointer-events: none;
+            content: "";
+            background-image: url(../../images/icons/dot_black.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @apply absolute left-[-23px] 2xl:top-[22px] lg:top-[20px] top-[18px] h-[8px] w-[8px];
+          }
+        }
+
+        .active {
+          @apply relative;
+          @apply text-[#fff];
+
+          &::after {
+            content: "";
+            background-image: url(../../images/icons/katana.svg);
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @apply absolute left-[-10px] right-0 bottom-[-25px] h-[16px];
+          }
+
+          &::before {
+            background-image: url(../../images/icons/dot_white.svg);
+          }
+        }
+      }
+    }
+
+    .map {
+      @apply flex flex-col items-center justify-center;
+
+      .locationImg {
+        @apply w-full flex justify-center;
+        @apply lg:px-[0%] md:px-[7%] sm:px-[13%] px-[15%];
+        //img {
+        //  @apply w-full;
+        //}
+      }
+
+      .topRoll {
+        @apply flex justify-center overflow-x-visible;
+        z-index: 3;
+
+        img {
+          @apply w-full;
+          @apply lg:translate-y-[40px] sm:translate-y-[60px] translate-y-[30px];
+        }
+      }
+
+      .bottomRoll {
+        @apply flex justify-center overflow-x-visible;
+        z-index: 3;
+
+        img {
+          @apply w-full;
+          @apply lg:translate-y-[-40px] sm:translate-y-[-60px] translate-y-[-30px];
+        }
+      }
+    }
+  }
+
+  .symbols {
+    @apply text-[#fff];
+    @apply 2xl:text-[64px] lg:text-[56px] text-[50px];
+    @apply 2xl:leading-[70px] lg:leading-[60px] leading-[52px];
+  }
+}

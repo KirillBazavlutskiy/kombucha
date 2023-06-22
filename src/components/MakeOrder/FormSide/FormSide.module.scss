@@ -1,0 +1,58 @@
+.container {
+  @apply flex flex-col gap-[25px] w-[410px] z-[2] mr-[140px];
+
+  input {
+    font-family: 'Montserrat', sans-serif;
+    @apply text-[24px] font-normal;
+    @apply w-full bg-transparent border-[1px] border-[#fff]/50 rounded-[6px];
+    @apply p-[15px] text-[#fff]/50;
+
+    &::placeholder {
+      @apply text-[#fff]/50;
+    }
+  }
+
+  .displacement {
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      @apply text-[#fff]/40 font-normal text-[24px] leading-[34px] mb-[10px];
+    }
+
+    .displacementList {
+      @apply flex gap-[20px];
+
+      .displacementOption {
+        @apply text-[#fff] bg-[#000]/20 backdrop-blur-[2px];
+        @apply rounded-[3px] px-[22px] py-[10px];
+        @apply transition-all shadow-none cursor-pointer;
+
+        span {
+          @apply font-bold;
+          @apply 2xl:text-[34px] lg:text-[22px] text-[18px];
+          @apply 2xl:leading-[36px] lg:leading-[26px] leading-[20px];
+        }
+
+        &:hover {
+          @apply bg-[#000]/30 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
+        }
+
+        &.active {
+          @apply bg-[#ff0000]/20 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
+        }
+      }
+    }
+  }
+
+  .btn {
+    @apply flex justify-center;
+
+    button {
+      @apply bg-[#000]/10 text-[#fff]/60 rounded-[50px] transition-all;
+      @apply font-bold text-[24px] px-[50px] py-[15px];
+
+      &:hover {
+        @apply bg-[#ff0000]/25 text-[#fff];
+      }
+    }
+  }
+}

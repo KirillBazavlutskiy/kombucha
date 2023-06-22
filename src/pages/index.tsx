@@ -1,0 +1,128 @@
+import { FC, useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+
+import fs from "fs";
+import process from "process";
+import path from "path";
+
+import { Layout } from '@/layouts/Layout';
+import Hero from '@/components/Hero/Hero';
+import FirstProduct from '@/components/FirstProduct/FirstProduct';
+import Product from '@/components/Product/Product';
+import WhereToFind from '@/components/WhereToFind/WhereToFind';
+
+import { Data } from '@/models/data';
+
+import Wine from '../images/products/wine.png';
+import Tarhun from '../images/products/tarhun.png';
+import Matcha from '../images/products/matcha.png';
+import Passion from '../images/products/passion.png';
+import KombuchaClassic from '../images/products/kombucha_classic.png';
+import MakeOrder from "@/components/MakeOrder/MakeOrder";
+
+
+
+
+interface IndexProps {
+  data: Data;
+}
+
+const Index: FC<IndexProps> = ({ data }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    }
+  }, [])
+
+  return (
+    <Layout title={"Samurai Kombucha"} keywords={""}>
+        <section id="hero">
+            <Hero
+                description={data.hero.description}
+                symbols={data.hero.symbols}
+                isMobile={isMobile}
+            />
+        </section>
+        <section id="tarhun">
+            <FirstProduct
+                img={Tarhun}
+                name={data.tarhun.name}
+                description={data.tarhun.description}
+                symbols={data.tarhun.symbols}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="wine">
+            <Product
+                img={Wine}
+                order={'ordinar'}
+                background={"#AA3732"}
+                name={data.wine.name}
+                symbols={data.wine.symbols}
+                description={data.wine.description}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="passion">
+            <Product
+                img={Passion}
+                order={'reversed'}
+                background={"#FF541E"}
+                name={data.passion.name}
+                symbols={data.passion.symbols}
+                description={data.passion.description}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="kombucha_classic">
+            <Product
+                img={KombuchaClassic}
+                order={'ordinar'}
+                background={"#D09821"}
+                name={data.kombucha_classic.name}
+                symbols={data.kombucha_classic.symbols}
+                description={data.kombucha_classic.description}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="matcha">
+            <Product
+                img={Matcha}
+                order={'reversed'}
+                background={"#3B6E36"}
+                name={data.matcha.name}
+                symbols={data.matcha.symbols}
+                description={data.matcha.description}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="make_order_form">
+            <MakeOrder />
+        </section>
+        <section id="where_to_find">
+            <WhereToFind />
+        </section>
+    </Layout>
+  )
+}
+
+export default Index;
+
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  const filePath = path.join(process.cwd(), 'data', 'data.json');
+  const data = fs.readFileSync(filePath);
+  const jsonData: Data = JSON.parse(data.toString());
+
+  return {
+    props: {
+      data: jsonData,
+    },
+    revalidate: 600,
+  };
+}

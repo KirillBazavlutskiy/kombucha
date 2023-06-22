@@ -1,0 +1,109 @@
+.wrapper {
+  grid-template-columns: auto minmax(320px, 1800px) auto;
+  grid-template-areas: ". content .";
+
+  @apply grid px-[40px];
+}
+
+.container {
+  grid-area: content;
+  @apply flex flex-col gap-[30px] w-full text-[#fff];
+  @apply 2xl:py-[80px] xl:py-[70px] lg:py-[60px] sm:py-[55px] py-[50px];
+
+  .name {
+    @apply leading-[100%] font-thin;
+    @apply 2xl:text-[96px] xl:text-[86px] lg:text-[78px] sm:text-[70px] text-[64px];
+  }
+
+  .reversed {
+    .text {
+      order: 2;
+    }
+    .model {
+      order: 1;
+    }
+  }
+  .content {
+    @apply grid items-center justify-between w-full;
+    @apply 2xl:gap-[50px] sm:gap-[40px] gap-[30px];
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 1366px) {
+      grid-template-columns: 1fr;
+    }
+
+    .toRight {
+      @apply text-right;
+    }
+
+    .text {
+      @apply max-w-[950px] flex;
+      @apply 2xl:text-[64px] xl:text-[56px] lg:text-[50px] sm:text-[44px] text-[40px];
+      @apply 2xl:leading-[70px] xl:leading-[60px] lg:leading-[52px] sm:leading-[46px] leading-[42px];
+
+      @media (max-width: 1366px) {
+        @apply text-center justify-center max-w-[100%];
+        order: 1;
+      }
+    }
+
+    .model {
+      @apply w-full flex;
+
+      @media (max-width: 1366px) {
+        @apply justify-center px-[5%];
+        order: 2;
+      }
+
+      img {
+        @apply w-full max-w-[520px] max-h-[640px];
+      }
+    }
+
+    .start {
+      @apply justify-start;
+
+      @media (max-width: 1366px) {
+        @apply justify-center;
+      }
+    }
+
+    .end {
+      @apply justify-end;
+
+      @media (max-width: 1366px) {
+        @apply justify-center;
+      }
+    }
+  }
+
+  .options {
+    @apply w-full flex items-center gap-[20px];
+
+    .symbols {
+      @apply text-[#fff] text-center opacity-[0.7];
+      @apply 2xl:text-[64px] lg:text-[56px] text-[50px];
+      @apply 2xl:leading-[70px] lg:leading-[60px] leading-[52px];
+    }
+
+    .displacement {
+      @apply flex gap-[20px];
+
+      .displacementOption {
+        @apply bg-[#000]/20 backdrop-blur-[2px];
+        @apply rounded-[3px] px-[22px] py-[10px];
+        @apply transition-all shadow-none cursor-pointer;
+
+        span {
+          @apply font-bold;
+          @apply 2xl:text-[34px] lg:text-[22px] text-[18px];
+          @apply 2xl:leading-[36px] lg:leading-[26px] leading-[20px];
+        }
+
+        &:hover {
+          @apply bg-[#000]/30 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.wrapper {
+  grid-template-columns: auto minmax(320px, 1720px) auto;
+  grid-template-areas: ". content .";
+
+  @apply px-[40px] pt-[80px] pb-[120px];
+  @apply grid bg-[var(--footer-background)] text-[var(--footer-color)];
+  background-image: url(../../images/sakura_footer.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 70% cover;
+}
+
+.container {
+  grid-area: content;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+
+  @apply grid gap-[150px] items-start justify-items-center w-full;
+
+  a:hover {
+    @apply opacity-[0.8] transition-all;
+  }
+
+  .logoWrapper {
+    @apply w-full h-full flex items-center justify-center;
+    .logo {
+      @apply max-w-[292px] max-h-[100px];
+    }
+  }
+
+  .menu {
+    @apply flex flex-col items-center gap-[15px];
+
+    .caption {
+      @apply text-[64px] uppercase font-thin;
+    }
+
+    .navbar {
+      @apply flex flex-col items-center gap-[10px];
+      @apply uppercase text-[32px] leading-[40px];
+    }
+  }
+
+  .contacts {
+    @apply flex flex-col items-center gap-[15px];
+
+    .caption {
+      @apply text-[64px] font-thin;
+    }
+
+    .subCaption {
+      @apply text-[32px] leading-[40px];
+    }
+
+    .icons {
+      @apply flex gap-[15px] items-center justify-center;
+    }
+  }
+}

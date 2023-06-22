@@ -1,0 +1,10 @@
+.container {
+  @apply relative flex justify-between items-center px-[100px] py-[50px] bg-[#BB891E] overflow-y-hidden;
+
+  img {
+    shape-rendering: geometricPrecision;
+    @apply absolute right-0 top-0 bottom-0;
+    @apply h-full w-full object-cover object-[100%_50%] z-[1];
+    @apply shadow-[-2px_0px_10px_rgba(255,_255,_255,_0.12)];
+  }
+}

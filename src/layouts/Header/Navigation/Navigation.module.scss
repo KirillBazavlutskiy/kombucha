@@ -1,0 +1,46 @@
+.list {
+  @apply w-full h-auto z-[200];
+  @apply mb-[20px] transition-all;
+
+  &.listOpen {
+    @apply max-h-[350px];
+  }
+
+  &.listClose {
+    @apply max-h-0;
+  }
+
+  ul {
+    @apply flex flex-col items-start gap-[20px];
+
+    li {
+      @apply text-[32px] ml-[10px];
+      @apply cursor-pointer;
+    }
+  }
+}
+
+.otherItemsList {
+  @apply flex flex-col items-start gap-[20px];
+  @apply w-full z-[200];
+
+  li {
+    @apply text-[32px];
+    @apply cursor-pointer;
+  }
+}
+
+.buttonListToggle {
+  @apply z-[100] text-[#000] text-[32px]
+  flex items-center gap-[5px] cursor-pointer;
+
+  svg {
+    @apply stroke-[#000] w-[30px] h-[30px] transition-all;
+  }
+
+  &.active {
+    svg {
+      @apply rotate-180;
+    }
+  }
+}
