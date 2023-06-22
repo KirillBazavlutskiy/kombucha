@@ -52,7 +52,8 @@ export const Navigation = () => {
                     <li><a href="#wine">Wine</a></li>
                     <li><a href="#passion">Passion</a></li>
                     <li><a href="#kombucha_classic">Classic</a></li>
-                    <li><a href="#matcha">Matcha</a></li>
+                    <li><a href="#cascara_mint">Cascara Mint</a></li>
+                    <li><a href="#classic_black">Classic Black</a></li>
                 </ul>
             </div>
             <ul className={s.otherItemsList}>

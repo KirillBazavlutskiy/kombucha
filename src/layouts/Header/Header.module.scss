@@ -59,7 +59,7 @@
 
     .background {
       @apply absolute top-0 right-0 bottom-0;
-      @apply w-[300px] bg-[#fff];
+      @apply w-full bg-[#fff];
     }
 
     &.open {

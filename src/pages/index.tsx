@@ -15,9 +15,11 @@ import { Data } from '@/models/data';
 
 import Wine from '../images/products/wine.png';
 import Tarhun from '../images/products/tarhun.png';
-import Matcha from '../images/products/matcha.png';
 import Passion from '../images/products/passion.png';
 import KombuchaClassic from '../images/products/kombucha_classic.png';
+import CascaraMint from '../images/products/cascara_mint.png';
+import ClassicBlack from '../images/products/classic_black.png';
+
 import MakeOrder from "@/components/MakeOrder/MakeOrder";
 
 
@@ -90,14 +92,26 @@ const Index: FC<IndexProps> = ({ data }) => {
                 displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
             />
         </section>
-        <section id="matcha">
+        <section id="cascara_mint">
             <Product
-                img={Matcha}
+                img={CascaraMint}
                 order={'reversed'}
-                background={"#3B6E36"}
-                name={data.matcha.name}
-                symbols={data.matcha.symbols}
-                description={data.matcha.description}
+                background={"#C2939B"}
+                name={data.cascara_mint.name}
+                symbols={data.cascara_mint.symbols}
+                description={data.cascara_mint.description}
+                isMobile={isMobile}
+                displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
+            />
+        </section>
+        <section id="classic_black">
+            <Product
+                img={ClassicBlack}
+                order={'ordinar'}
+                background={"#784E2F"}
+                name={data.classic_black.name}
+                symbols={data.classic_black.symbols}
+                description={data.classic_black.description}
                 isMobile={isMobile}
                 displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
             />

@@ -4,7 +4,8 @@ export interface Data {
     wine: IProduct;
     passion: IProduct;
     kombucha_classic: IProduct;
-    matcha: IProduct;
+    cascara_mint: IProduct;
+    classic_black: IProduct;
 };
 
 export interface IHero {

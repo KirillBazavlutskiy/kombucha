@@ -1,9 +1,9 @@
 .list {
-  @apply w-full h-auto z-[200];
+  @apply w-full h-auto z-[200] overflow-y-hidden;
   @apply mb-[20px] transition-all;
 
   &.listOpen {
-    @apply max-h-[350px];
+    @apply max-h-[500px];
   }
 
   &.listClose {
