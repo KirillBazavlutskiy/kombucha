@@ -13,24 +13,36 @@ import Logo from "@/images/general/logo_header.svg";
 interface HeaderProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
 
 export const Header: FC<HeaderProps> = ({ className }) => {
-    const [isOpen, toggleOpen] = useCycle(false, true);
+    const [isOpenBurger, toggleBurgerOpen] = useCycle(false, true);
+    const [isProductListOpen, toggleProductListOpen] = useCycle(false, true);
 
     return (
         <header className={cn(s.wrapper, className)}>
             <div className={s.container}>
                 <Image className={s.logo} src={Logo} alt="Logo of Samurai Kombucha (black edition)" />
-                <nav className={s.navbar}>
-                    <a href="#tarhun">Тархун</a>
-                    <a href="#wine">Wine</a>
-                    <a href="#passion">Passion</a>
-                    <a href="#kombucha_classic">Classic</a>
-                    <a href="#matcha">Matcha</a>
-                    <a href="#">Виготовлення</a>
-                    <a href="#where_to_find">Де нас знайти?</a>
-                </nav>
-                <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
-                <div className={cn(s.overlay, isOpen && s.visible)} onClick={() => toggleOpen()} />
-                <nav className={cn(s.sidebarMenu, isOpen ? s.open : s.closed)}>
+                <div className={s.productList}>
+                    <button onClick={() => toggleProductListOpen()} className={cn(s.productListBtn, isProductListOpen && s.open)}>
+                        <p>Продукція</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </button>
+                    <nav className={cn(s.navbar, !isProductListOpen && s.listClose)}>
+                        <a href="#tarhun">Тархун</a>
+                        <a href="#wine">Wine</a>
+                        <a href="#passion">Passion</a>
+                        <a href="#kombucha_classic">Classic</a>
+                        <a href="#matcha">Matcha</a>
+                    </nav>
+                    <nav className={s.navbar}>
+                        <a href="#">Виготовлення</a>
+                        <a href="#where_to_find">Де нас знайти?</a>
+                    </nav>
+                </div>
+                <MenuToggle toggle={() => toggleBurgerOpen()} isOpen={isOpenBurger} />
+                <div className={cn(s.overlay, isOpenBurger && s.visible)} onClick={() => toggleBurgerOpen()} />
+                <nav className={cn(s.sidebarMenu, isOpenBurger ? s.open : s.closed)}>
                     <div className={s.background} />
                     <Navigation />
                 </nav>

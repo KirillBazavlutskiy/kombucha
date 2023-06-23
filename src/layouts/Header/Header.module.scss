@@ -13,20 +13,42 @@
     @apply max-w-[182px] sm:max-w-[202px] lg:max-w-[222px] xl:max-w-[252px] 2xl:max-w-[292px];
   }
 
-  .navbar {
-    @apply hidden xl:flex items-center gap-[20px] overflow-x-visible;
+  .productList {
+    @apply hidden xl:flex items-center gap-[20px];
 
-    a {
-      @apply text-[24px] leading-[24px] font-bold relative overflow-x-visible;
+    .productListBtn {
+      @apply flex items-center gap-[5px];
 
-      &::before {
-        content: "";
-        @apply absolute left-[-2px] right-[-2px] bottom-[-6px] h-[3px]
-        bg-[#FF0000] opacity-0 transition-all;
+      p {
+        @apply text-[24px] leading-[28px] font-bold relative;
+        @apply overflow-x-visible;
       }
 
-      &:hover::before {
-        @apply opacity-100;
+      svg {
+        @apply transition-all w-[22px] h-[22px];
+      }
+
+      &.open {
+        svg {
+          @apply rotate-180;
+        }
+      }
+    }
+
+    .navbar {
+      @apply flex items-center gap-[20px] overflow-x-hidden max-w-[600px] transition-all;
+
+      a {
+        @apply text-[24px] leading-[28px] font-bold relative overflow-x-visible;
+        @apply border-b-[3px] border-[#FF0000]/0 transition-all;
+
+        &:hover {
+          @apply border-[#FF0000]/100;
+        }
+      }
+
+      &.listClose {
+        @apply max-w-[0px];
       }
     }
   }
