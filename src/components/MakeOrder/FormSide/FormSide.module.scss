@@ -1,11 +1,12 @@
 .container {
-  @apply flex flex-col gap-[25px] w-[410px] z-[2] mr-[140px];
+  @apply flex flex-col z-[2] mr-0 xl:mr-[5%];
+  @apply gap-[25px] w-full xl:w-[410px];
 
   input {
     font-family: 'Montserrat', sans-serif;
-    @apply text-[24px] font-normal;
+    @apply text-[18px] xl:text-[24px] font-normal;
     @apply w-full bg-transparent border-[1px] border-[#fff]/50 rounded-[6px];
-    @apply p-[15px] text-[#fff]/50;
+    @apply p-[10px] xl:p-[15px] text-[#fff]/50;
 
     &::placeholder {
       @apply text-[#fff]/50;
@@ -15,11 +16,12 @@
   .displacement {
     h2 {
       font-family: 'Montserrat', sans-serif;
-      @apply text-[#fff]/40 font-normal text-[24px] leading-[34px] mb-[10px];
+      @apply text-[#fff]/40 font-normal text-center 2xl:text-start;
+      @apply text-[24px] leading-[34px] mb-[10px];
     }
 
     .displacementList {
-      @apply flex gap-[20px];
+      @apply flex justify-center 2xl:justify-start gap-[20px];
 
       .displacementOption {
         @apply text-[#fff] bg-[#000]/20 backdrop-blur-[2px];

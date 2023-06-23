@@ -116,9 +116,9 @@ const Index: FC<IndexProps> = ({ data }) => {
                 displacement={[ '0.33 МЛ', '0.75 МЛ' ]}
             />
         </section>
-        {/*<section id="make_order_form">*/}
-        {/*    <MakeOrder />*/}
-        {/*</section>*/}
+        <section id="make_order_form">
+            <MakeOrder />
+        </section>
         <section id="where_to_find">
             <WhereToFind />
         </section>

@@ -81,7 +81,7 @@ const Product: FC<ProductProps> = (
                 : (
                     <div className={s.wrapper} style={{ backgroundColor: background }}>
                         <div className={s.container}>
-                            <h2 className={s.name}>{name}</h2>
+                            <h2 className={cn(s.name, 'text-center', order == 'reversed' ? 'xl:text-left' : 'xl:text-right')}>{name}</h2>
                             <div className={cn(s.content, order == 'reversed' && [s.reversed])}>
                                 <div className={cn(s.text, order == 'reversed' && [s.toRight])}>{description}</div>
                                 <div className={cn(s.model, order == 'reversed' ? s.start : s.end )}>
