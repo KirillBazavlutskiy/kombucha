@@ -17,10 +17,10 @@
     @apply hidden xl:flex items-center gap-[20px];
 
     .productListBtn {
-      @apply flex items-center gap-[5px];
+      @apply flex items-center gap-[5px] pb-[5x];
 
       p {
-        @apply text-[24px] leading-[28px] font-bold relative;
+        @apply text-[24px] font-bold relative;
         @apply overflow-x-visible;
       }
 
