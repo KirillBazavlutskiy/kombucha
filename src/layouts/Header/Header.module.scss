@@ -7,7 +7,7 @@
 
 .container {
   grid-area: content;
-  @apply flex items-center justify-between xl:justify-start xl:gap-[170px] w-full;
+  @apply flex items-center justify-between gap-[20px] w-full;
 
   .logo {
     @apply max-w-[182px] sm:max-w-[202px] lg:max-w-[222px] xl:max-w-[252px] 2xl:max-w-[292px];

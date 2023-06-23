@@ -3,10 +3,9 @@
   grid-template-areas: ". content .";
 
   @apply grid px-[40px] bg-[#D09821];
-  background-image: url(../../images/sakura_where-to-find.png);
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: 70% cover;
+  @apply bg-[right_center] bg-no-repeat;
+  @apply bg-none xl:bg-[url(../../images/sakura_where-to-find.png)];
+  @apply bg-[70%_cover];
 }
 
 .container {
