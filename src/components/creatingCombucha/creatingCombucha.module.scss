@@ -1,0 +1,20 @@
+.container {
+  @apply px-[100px] py-[50px] bg-[#D09821];
+  @apply flex flex-col items-center gap-[160px];
+
+  h2 {
+    @apply w-full text-center xl:text-left font-sverdlovsk;
+    @apply 2xl:text-[96px] xl:text-[86px] lg:text-[78px] sm:text-[70px] text-[64px];
+  }
+
+  p {
+    @apply font-pobeda;
+    @apply w-[748px] text-center font-bold;
+    @apply 2xl:text-[64px] xl:text-[56px] lg:text-[50px] sm:text-[44px] text-[40px];
+  }
+
+  h3 {
+    @apply w-full text-center xl:text-left font-normal;
+    @apply 2xl:text-[64px] lg:text-[56px] text-[50px];
+  }
+}

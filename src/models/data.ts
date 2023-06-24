@@ -6,6 +6,7 @@ export interface Data {
     kombucha_classic: IProduct;
     cascara_mint: IProduct;
     classic_black: IProduct;
+    creating_combucha: ICreatingCombucha;
 };
 
 export interface IHero {
@@ -18,4 +19,10 @@ export interface IProduct {
     description: string;
     symbols: string;
     displacement: string[];
+}
+
+export interface ICreatingCombucha {
+    title: string;
+    description: string;
+    symbols: string;
 }

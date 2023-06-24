@@ -21,6 +21,7 @@ import CascaraMint from '../images/products/cascara_mint.png';
 import ClassicBlack from '../images/products/classic_black.png';
 
 import MakeOrder from "@/components/MakeOrder/MakeOrder";
+import CreatingCombucha from "@/components/creatingCombucha/creatingCombucha";
 
 
 
@@ -118,6 +119,13 @@ const Index: FC<IndexProps> = ({ data }) => {
         </section>
         <section id="make_order_form">
             <MakeOrder />
+        </section>
+        <section>
+            <CreatingCombucha
+                title={data.creating_combucha.title}
+                description={data.creating_combucha.description}
+                symbols={data.creating_combucha.symbols}
+            />
         </section>
         <section id="where_to_find">
             <WhereToFind />

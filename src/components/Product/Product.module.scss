@@ -37,6 +37,7 @@
     }
 
     .text {
+      @apply font-pobeda;
       @apply max-w-[950px] flex;
       @apply 2xl:text-[64px] xl:text-[56px] lg:text-[50px] sm:text-[44px] text-[40px];
       @apply 2xl:leading-[70px] xl:leading-[60px] lg:leading-[52px] sm:leading-[46px] leading-[42px];
@@ -95,7 +96,7 @@
         @apply transition-all shadow-none cursor-pointer;
 
         span {
-          @apply font-bold;
+          @apply font-pobeda font-bold;
           @apply 2xl:text-[34px] lg:text-[22px] text-[18px];
           @apply 2xl:leading-[36px] lg:leading-[26px] leading-[20px];
         }

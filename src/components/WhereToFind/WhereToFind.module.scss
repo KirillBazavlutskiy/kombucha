@@ -2,7 +2,7 @@
   grid-template-columns: auto minmax(320px, 1800px) auto;
   grid-template-areas: ". content .";
 
-  @apply grid px-[40px] bg-[#D09821];
+  @apply grid px-[40px] bg-[#A87B1B];
   @apply bg-[right_center] bg-no-repeat;
   @apply bg-none xl:bg-[url(../../images/sakura_where-to-find.png)];
   @apply bg-[70%_cover];

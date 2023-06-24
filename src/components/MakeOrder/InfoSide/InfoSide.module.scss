@@ -7,7 +7,7 @@
   }
 
   p {
-    font-family: 'Montserrat', sans-serif;
+    @apply font-montserrat;
     @apply w-full font-normal text-[18px] sm:text-[22px] md:text-[28px] xl:text-[32px];
   }
 

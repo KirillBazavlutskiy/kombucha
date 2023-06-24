@@ -3,6 +3,7 @@ import cn from 'classnames';
 import type { AppProps } from 'next/app';
 
 import localFont from 'next/font/local';
+import {montserrat, pobeda, sverdlovsk} from "@/fonts";
 
 
 const fonts = localFont({
@@ -33,7 +34,13 @@ const fonts = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={cn(fonts.className)}>
+    <main className={cn(
+        fonts.variable,
+        pobeda.variable,
+        sverdlovsk.variable,
+        montserrat.variable,
+        'font-sans'
+    )}>
       <Component {...pageProps} />
     </main>
   );
