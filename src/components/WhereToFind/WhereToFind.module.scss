@@ -14,6 +14,7 @@
 
   .caption {
     @apply leading-[100%] font-thin text-[#fff];
+    @apply text-center lg:text-left;
     @apply 2xl:text-[96px] xl:text-[86px] lg:text-[78px] sm:text-[70px] text-[64px];
   }
 

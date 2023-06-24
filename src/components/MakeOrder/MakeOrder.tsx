@@ -7,9 +7,11 @@ import FormSide from "@/components/MakeOrder/FormSide/FormSide";
 
 const MakeOrder = () => {
     return (
-        <div className={s.container}>
-            <InfoSide />
-            <FormSide />
+        <div className={s.wrapper}>
+            <div className={s.container}>
+                <InfoSide />
+                <FormSide />
+            </div>
             <Image src={RectangleForm} alt={"rectangle"} />
         </div>
     );

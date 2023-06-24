@@ -1,12 +1,8 @@
 .wrapper {
-  grid-template-columns: auto minmax(320px, 1800px) auto;
-  grid-template-areas: ". content .";
-
-  @apply grid py-[5px] lg:py-[10px] 2xl:py-[20px] px-[40px];
+  @apply w-full max-w-[1920px] py-[5px] lg:py-[10px] 2xl:py-[20px] px-[20px];
 }
 
 .container {
-  grid-area: content;
   @apply flex items-center justify-between gap-[20px] w-full;
 
   .logo {
@@ -20,7 +16,7 @@
       @apply flex items-center gap-[5px] pb-[5x];
 
       p {
-        @apply text-[24px] font-bold relative;
+        @apply font-montserrat text-[20px] font-bold relative;
         @apply overflow-x-visible;
       }
 
@@ -36,10 +32,10 @@
     }
 
     .navbar {
-      @apply flex items-center gap-[20px] overflow-x-hidden max-w-[600px] transition-all;
+      @apply flex items-center gap-[18px] overflow-x-hidden max-w-[600px] transition-all;
 
       a {
-        @apply text-[24px] leading-[28px] font-bold relative overflow-x-visible;
+        @apply font-montserrat text-[20px] font-bold relative overflow-x-visible;
         @apply border-b-[3px] border-[#FF0000]/0 transition-all;
 
         &:hover {

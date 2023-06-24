@@ -1,13 +1,9 @@
 .wrapper {
-  grid-template-columns: auto minmax(320px, 1800px) auto;
-  grid-template-areas: ". content .";
-
-  @apply grid px-[40px];
+  @apply w-full flex justify-center px-[40px];
 }
 
 .container {
-  grid-area: content;
-  @apply flex flex-col gap-[30px] w-full text-[#fff];
+  @apply w-full max-w-[1920px] flex flex-col gap-[30px] text-[#fff];
   @apply 2xl:py-[80px] xl:py-[70px] lg:py-[60px] sm:py-[55px] py-[50px];
 
   .name {
@@ -82,7 +78,7 @@
     @apply w-full flex items-center gap-[20px];
 
     .symbols {
-      @apply text-[#fff] text-center opacity-[0.7];
+      @apply text-center opacity-[0.7];
       @apply 2xl:text-[64px] lg:text-[56px] text-[50px];
       @apply 2xl:leading-[70px] lg:leading-[60px] leading-[52px];
     }

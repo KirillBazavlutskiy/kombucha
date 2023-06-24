@@ -20,6 +20,10 @@ module.exports = {
         sverdlovsk: ['var(--font-sverdlovsk)'],
         montserrat: ['var(--font-montserrat)'],
       },
+      screens: {
+        usm: '400px',
+        '2xs': '1366px',
+      }
     },
   },
   plugins: [],

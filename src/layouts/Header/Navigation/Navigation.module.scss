@@ -16,6 +16,10 @@
     li {
       @apply text-[32px] ml-[10px];
       @apply cursor-pointer;
+
+      a {
+        @apply font-pobeda
+      }
     }
   }
 }
@@ -27,11 +31,15 @@
   li {
     @apply text-[32px];
     @apply cursor-pointer;
+
+    a {
+      @apply font-pobeda;
+    }
   }
 }
 
 .buttonListToggle {
-  @apply z-[100] text-[#000] text-[32px]
+  @apply z-[100] font-pobeda text-[#000] text-[32px]
   flex items-center gap-[5px] cursor-pointer;
 
   svg {

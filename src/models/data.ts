@@ -19,6 +19,7 @@ export interface IProduct {
     description: string;
     symbols: string;
     displacement: string[];
+    color?: 'white' | 'black';
 }
 
 export interface ICreatingCombucha {

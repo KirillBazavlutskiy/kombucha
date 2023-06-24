@@ -1,13 +1,9 @@
 .wrapper {
-  grid-template-columns: auto minmax(320px, 1800px) auto;
-  grid-template-areas: ". content .";
-
-  @apply grid px-[40px];
+  @apply w-full flex justify-center px-[40px];
 }
 
 .container {
-  grid-area: content;
-  @apply flex flex-col gap-[30px] w-full;
+  @apply flex flex-col gap-[30px] w-full max-w-[1920px];
   @apply 2xl:py-[80px] xl:py-[70px] lg:py-[60px] sm:py-[55px] py-[50px];
 
   .content {
@@ -20,7 +16,7 @@
     }
 
     .text {
-      @apply max-w-[950px] flex;
+      @apply font-pobeda max-w-[950px] flex;
       @apply 2xl:text-[64px] xl:text-[56px] lg:text-[50px] sm:text-[44px] text-[40px];
       @apply 2xl:leading-[70px] xl:leading-[60px] lg:leading-[52px] sm:leading-[46px] leading-[42px];
 
@@ -44,7 +40,7 @@
   }
 
   .symbols {
-    @apply text-[#C3C3C3];
+    @apply font-pobeda text-[#C3C3C3] text-center 2xl:text-left;
     @apply 2xl:text-[64px] lg:text-[56px] text-[50px];
     @apply 2xl:leading-[70px] lg:leading-[60px] leading-[52px];
   }

@@ -1,12 +1,17 @@
-.container {
-  @apply relative flex justify-between items-center gap-[20px];
-  @apply flex-col xl:flex-row;
+.wrapper {
+  @apply relative w-full flex justify-center;
   @apply p-[30px] xl:px-[100px] py-[50px] bg-[#A87B1B] overflow-y-hidden;
+
+  .container {
+    @apply w-full max-w-[1920px] overflow-x-visible;
+    @apply flex justify-between items-center gap-[20px];
+    @apply flex-col xl:flex-row;
+  }
 
   img {
     shape-rendering: geometricPrecision;
     @apply absolute right-0 top-0 bottom-0;
-    @apply h-full w-full object-cover object-[100%_50%] z-[1];
+    @apply w-full h-full object-contain object-right  z-[1];
     @apply shadow-[-2px_0px_10px_rgba(255,_255,_255,_0.12)];
   }
 }

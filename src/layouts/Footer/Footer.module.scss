@@ -1,9 +1,7 @@
 .wrapper {
-  grid-template-columns: auto minmax(320px, 1720px) auto;
-  grid-template-areas: ". content .";
-
+  @apply w-full flex justify-center;
   @apply px-[40px] pt-[80px] pb-[120px];
-  @apply grid bg-[var(--footer-background)] text-[var(--footer-color)];
+  @apply bg-[var(--footer-background)] text-[var(--footer-color)];
   background-image: url(../../images/sakura_footer.png);
   background-position: left top;
   background-repeat: no-repeat;
@@ -11,14 +9,13 @@
 }
 
 .container {
-  grid-area: content;
   grid-template-columns: 1fr 1fr 1fr 2fr;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
   }
 
-  @apply grid gap-[150px] items-start justify-items-center w-full;
+  @apply w-full max-w-[1920px] grid gap-[150px] items-start justify-items-center w-full;
 
   a:hover {
     @apply opacity-[0.8] transition-all;

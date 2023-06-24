@@ -7,6 +7,7 @@ import { slideFromLeft, slideFromRight, slideFromTop, fade, mobile, duration } f
 
 import s from './Product.module.scss';
 import { IProduct } from '@/models/data';
+import {useOrderForm} from "@/store/useOrderForm";
 
 interface ProductProps extends IProduct {
     order: 'ordinar' | 'reversed';
@@ -24,8 +25,12 @@ const Product: FC<ProductProps> = (
         order,
         img,
         isMobile,
-        displacement
+        displacement,
+        color = 'white'
     }) => {
+
+    const { orderForm, setOrderForm } = useOrderForm();
+
     return (
         <>
             {!isMobile
@@ -42,14 +47,23 @@ const Product: FC<ProductProps> = (
                                 variants={slideFromTop}
                                 transition={duration}
                                 custom={3}
-                                className={cn(s.name, 'text-center', order == 'reversed' ? 'xl:text-left' : 'xl:text-right')}
+                                className={cn(
+                                    s.name,
+                                    'text-center',
+                                    order === 'reversed' ? '2xs:text-left' : '2xs:text-right',
+                                    color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                )}
                             >{name}</motion.h2>
                             <div className={cn(s.content, order == 'reversed' && [s.reversed])}>
                                 <motion.div
                                     variants={order == 'reversed' ? slideFromRight : slideFromLeft}
                                     transition={duration}
                                     custom={2}
-                                    className={cn(s.text, order == 'reversed' && [s.toRight])}
+                                    className={cn(
+                                        s.text,
+                                        order == 'reversed' && [s.toRight],
+                                        color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                    )}
                                     >{description}</motion.div>
                                 <motion.div
                                     variants={order == 'reversed' ? slideFromLeft : slideFromRight}
@@ -64,14 +78,24 @@ const Product: FC<ProductProps> = (
                                 variants={fade}
                                 transition={duration}
                                 custom={5}
-                                className={cn(s.options, order == 'reversed' ? 'flex-col xl:flex-row' : 'flex-col xl:flex-row-reverse')}
+                                className={cn(s.options, order == 'reversed' ? 'flex-col 2xs:flex-row' : 'flex-col 2xs:flex-row-reverse')}
                             >
-                                <h3 className={s.symbols}>{symbols}</h3>
+                                <h3 className={cn(
+                                    s.symbols,
+                                    color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                )}>{symbols}</h3>
                                 <div className={s.displacement}>{
                                     displacement.map(d =>
-                                        <div key={d} className={s.displacementOption}>
+                                        <a
+                                            href={'#make_order_form'}
+                                            key={d}
+                                            className={s.displacementOption}
+                                            onClick={() => {
+                                                setOrderForm({ ...orderForm, product: name, displacement: d })
+                                            }}
+                                        >
                                             <span>{d}</span>
-                                        </div>
+                                        </a>
                                     )
                                 }</div>
                             </motion.div>
@@ -92,9 +116,16 @@ const Product: FC<ProductProps> = (
                                 <h3 className={s.symbols}>{symbols}</h3>
                                 <div className={s.displacement}>{
                                     displacement.map(d =>
-                                        <div key={d} className={s.displacementOption}>
+                                        <a
+                                            href={'#make_order_form'}
+                                            key={d}
+                                            className={s.displacementOption}
+                                            onClick={() => {
+                                                setOrderForm({ ...orderForm, product: name, displacement: d })
+                                            }}
+                                        >
                                             <span>{d}</span>
-                                        </div>
+                                        </a>
                                     )
                                 }</div>
                             </div>
