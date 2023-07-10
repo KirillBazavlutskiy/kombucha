@@ -1,17 +1,10 @@
 .wrapper {
-  @apply relative w-full flex justify-center;
-  @apply p-[30px] xl:px-[100px] py-[50px] bg-[#A87B1B] overflow-y-hidden;
+  @apply relative w-full flex justify-center min-h-[1080px];
+  @apply p-[10px] usm:p-[30px] lg:px-[50px] 2xl:px-[100px] py-[50px] bg-[#FFF] overflow-y-hidden;
 
   .container {
     @apply w-full max-w-[1920px] overflow-x-visible;
-    @apply flex justify-between items-center gap-[20px];
-    @apply flex-col xl:flex-row;
-  }
-
-  img {
-    shape-rendering: geometricPrecision;
-    @apply absolute right-0 top-0 bottom-0;
-    @apply w-full h-full object-contain object-right  z-[1];
-    @apply shadow-[-2px_0px_10px_rgba(255,_255,_255,_0.12)];
+    @apply flex justify-between items-center gap-[20px] lg:gap-[100px] xl:gap-[200px] 2xl:gap-[300px];
+    @apply flex-col lg:flex-row;
   }
 }

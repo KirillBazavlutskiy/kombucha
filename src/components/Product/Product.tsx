@@ -84,20 +84,6 @@ const Product: FC<ProductProps> = (
                                     s.symbols,
                                     color === 'white' ? 'text-[#fff]' : 'text-[#000]'
                                 )}>{symbols}</h3>
-                                <div className={s.displacement}>{
-                                    displacement.map(d =>
-                                        <a
-                                            href={'#make_order_form'}
-                                            key={d}
-                                            className={s.displacementOption}
-                                            onClick={() => {
-                                                setOrderForm({ ...orderForm, product: name, displacement: d })
-                                            }}
-                                        >
-                                            <span>{d}</span>
-                                        </a>
-                                    )
-                                }</div>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -114,20 +100,6 @@ const Product: FC<ProductProps> = (
                             </div>
                             <div className={cn(s.options, order == 'reversed' ? 'flex-col xl:flex-row' : 'flex-col xl:flex-row-reverse')}>
                                 <h3 className={s.symbols}>{symbols}</h3>
-                                <div className={s.displacement}>{
-                                    displacement.map(d =>
-                                        <a
-                                            href={'#make_order_form'}
-                                            key={d}
-                                            className={s.displacementOption}
-                                            onClick={() => {
-                                                setOrderForm({ ...orderForm, product: name, displacement: d })
-                                            }}
-                                        >
-                                            <span>{d}</span>
-                                        </a>
-                                    )
-                                }</div>
                             </div>
                         </div>
                     </div>

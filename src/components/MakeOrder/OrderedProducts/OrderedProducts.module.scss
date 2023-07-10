@@ -1,0 +1,32 @@
+.container {
+    @apply w-full lg:w-[65%] h-full flex flex-col justify-start;
+
+    .header {
+        @apply w-full flex flex-col justify-between items-start mb-[37px];
+        h2 {
+            @apply font-pobeda text-[#000];
+            @apply 2xl:text-[64px] lg:text-[56px] sm:text-[50px] text-[30px];
+        }
+    }
+
+    .line {
+        @apply w-full h-[2px] bg-[#000];
+    }
+
+    .ordersList {
+        @apply w-full h-[650px] flex flex-col items-center gap-[20px] overflow-y-scroll;
+    }
+
+    .footer {
+        @apply w-full flex flex-col justify-between items-end mt-[37px];
+
+        h2 {
+            @apply font-pobeda text-[#000];
+            @apply 2xl:text-[64px] lg:text-[56px] sm:text-[50px] text-[30px];
+
+            span {
+                @apply text-[#B42626] ml-[10px];
+            }
+        }
+    }
+}

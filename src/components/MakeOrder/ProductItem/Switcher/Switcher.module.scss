@@ -1,0 +1,23 @@
+.switcher {
+  @apply w-[53px] h-[23px] rounded-full relative transition-all;
+
+  .rect {
+    @apply w-[15px] h-[15px] absolute top-[50%] transition-all rounded-full translate-y-[-50%] left-0;
+  }
+
+  &.active {
+    @apply bg-[#FF0101]/40;
+
+    .rect {
+      @apply bg-[#FF0000]/60 left-[calc(100%_-_19px)];
+    }
+  }
+
+  &.notActive {
+    @apply bg-[#FF0000]/20;
+
+    .rect {
+      @apply bg-[#FF0000]/20 left-[4px];
+    }
+  }
+}

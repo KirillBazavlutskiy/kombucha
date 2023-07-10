@@ -1,5 +1,5 @@
 .wrapper {
-  @apply w-full px-[20px] py-[50px] bg-[#D09821];
+  @apply w-full px-[20px] py-[50px] bg-[#fff];
   @apply flex justify-center;
 
   .container {
@@ -10,10 +10,15 @@
       @apply 2xl:text-[96px] xl:text-[86px] lg:text-[72px] sm:text-[64px] usm:text-[46px] text-[40px];
     }
 
-    p {
-      @apply font-pobeda;
-      @apply w-full max-w-[748px] text-center font-bold;
-      @apply 2xl:text-[64px] xl:text-[56px] lg:text-[50px] sm:text-[44px] usm:text-[32px] text-[26px];
+    .rect {
+      @apply bg-[#B42626] w-full max-w-[712px] aspect-square rounded-full flex justify-center items-center;
+      @apply py-[14%] px-[8%];
+
+      p {
+        @apply font-pobeda text-[#fff];
+        @apply w-full text-center font-normal leading-[70px];
+        @apply 2xl:text-[60px] xl:text-[56px] lg:text-[50px] sm:text-[44px] usm:text-[32px] text-[28px];
+      }
     }
 
     h3 {

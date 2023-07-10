@@ -1,60 +1,50 @@
 .container {
-  @apply flex flex-col z-[2] mr-0 xl:mr-[5%];
-  @apply gap-[25px] w-full xl:w-[410px];
+  @apply flex h-full flex-col justify-between z-[2] gap-[20px];
+  @apply w-full lg:w-[35%];
 
-  input {
-    @apply font-montserrat;
-    @apply text-[18px] xl:text-[24px] font-normal;
-    @apply w-full bg-transparent border-[1px] border-[#fff]/50 rounded-[6px];
-    @apply p-[10px] xl:p-[15px] text-[#fff]/50;
-
-    &::placeholder {
-      @apply text-[#fff]/50;
-    }
+  h2 {
+    @apply font-sverdlovsk text-[#7B2121] text-center md:text-left;
+    @apply 2xl:text-[96px] xl:text-[86px] lg:text-[72px] sm:text-[64px] usm:text-[46px] text-[40px];
   }
 
-  .displacement {
-    h2 {
-      @apply font-montserrat;
-      @apply text-[#fff]/40 font-normal text-center 2xl:text-start;
-      @apply text-[24px] leading-[34px] mb-[10px];
+  h3 {
+    @apply font-sverdlovsk text-[#7B2121] text-center md:text-left;
+    @apply 2xl:text-[64px] lg:text-[56px] sm:text-[50px] usm:text-[32px] text-[24px];
+  }
+
+  form {
+    @apply w-full flex flex-col gap-[50px];
+
+    h3 {
+      @apply font-montserrat text-[#000] text-[24px] mb-[10px];
     }
 
-    .displacementList {
-      @apply flex justify-center 2xl:justify-start gap-[20px];
+    label {
+      @apply w-full flex flex-col gap-[10px];
 
-      .displacementOption {
-        @apply text-[#fff] bg-[#000]/20 backdrop-blur-[2px];
-        @apply rounded-[3px] px-[22px] py-[10px];
-        @apply transition-all shadow-none cursor-pointer;
+      input {
+        @apply font-montserrat;
+        @apply text-[18px] xl:text-[20px] font-normal;
+        @apply w-full bg-transparent border-[1px] border-[#000]/90 rounded-[6px];
+        @apply p-[10px] xl:px-[15px] text-[#000]/90;
 
-        span {
-          @apply font-pobeda font-bold;
-          @apply 2xl:text-[34px] lg:text-[22px] text-[18px];
-          @apply 2xl:leading-[36px] lg:leading-[26px] leading-[20px];
-        }
-
-        &:hover {
-          @apply bg-[#000]/30 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
-        }
-
-        &.active {
-          @apply bg-[#ff0000]/20 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
+        &::placeholder {
+          @apply text-[#000]/80;
         }
       }
     }
-  }
 
-  .btn {
-    @apply flex justify-center;
+    .btn {
+      @apply flex justify-center;
 
-    button {
-      @apply font-montserrat;
-      @apply bg-[#000]/10 text-[#fff]/60 rounded-[50px] transition-all;
-      @apply font-bold text-[24px] px-[50px] py-[15px];
+      button {
+        @apply font-montserrat;
+        @apply bg-[#B42626]/90 text-[#fff] rounded-[50px] transition-all;
+        @apply font-bold text-[24px] px-[50px] py-[15px];
 
-      &:hover {
-        @apply bg-[#ff0000]/25 text-[#fff];
+        &:hover {
+          @apply bg-[#B42626]/100 text-[#fff];
+        }
       }
     }
   }

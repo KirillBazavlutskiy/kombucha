@@ -7,7 +7,9 @@ const CreatingCombucha: FC<ICreatingCombucha> = ({ title, description, symbols }
         <div className={s.wrapper}>
             <div className={s.container}>
                 <h2>{title}</h2>
-                <p>{description}</p>
+                <div className={s.rect}>
+                    <p>{description}</p>
+                </div>
                 <h3>{symbols}</h3>
             </div>
         </div>

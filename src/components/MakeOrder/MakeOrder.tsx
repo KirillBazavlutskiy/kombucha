@@ -1,18 +1,15 @@
 import React from 'react';
 import s from './MakeOrder.module.scss';
-import RectangleForm from './svg/RectangleForm.svg';
-import InfoSide from "@/components/MakeOrder/InfoSide/InfoSide";
-import Image from "next/image";
 import FormSide from "@/components/MakeOrder/FormSide/FormSide";
+import OrderedProducts from "@/components/MakeOrder/OrderedProducts/OrderedProducts";
 
 const MakeOrder = () => {
     return (
         <div className={s.wrapper}>
             <div className={s.container}>
-                <InfoSide />
                 <FormSide />
+                <OrderedProducts />
             </div>
-            <Image src={RectangleForm} alt={"rectangle"} />
         </div>
     );
 };

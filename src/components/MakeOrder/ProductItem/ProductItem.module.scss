@@ -1,0 +1,40 @@
+.container {
+  @apply flex w-full gap-[18px];
+
+  .rectangle {
+    @apply w-[175px] h-[175px] aspect-[1] my-[11px] bg-[#B42626] rounded-full;
+    @apply hidden xl:flex justify-center items-center
+  }
+
+  .options {
+    @apply w-full flex flex-col justify-between;
+
+    h3 {
+      @apply font-montserrat text-[24px];
+    }
+
+    .dimensions {
+      @apply w-full flex flex-col gap-[12px];
+
+      .dimension {
+        @apply flex justify-between items-center;
+
+        .dimensionName {
+          @apply flex items-center gap-[10px];
+
+          p {
+            @apply font-montserrat text-[16px] font-bold text-[#7B2121];
+          }
+        }
+
+        .counter {
+          @apply flex gap-[10px] usm:gap-[15px];
+
+          span {
+            @apply w-[17px] font-montserrat text-center text-[22px] usm:text-[24px] font-normal;
+          }
+        }
+      }
+    }
+  }
+}
