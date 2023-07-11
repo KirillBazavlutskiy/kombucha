@@ -14,9 +14,6 @@ export const Footer: FC<FooterProps> = ({ className }) => {
     return (
         <footer className={cn(s.wrapper, className)}>
             <div className={s.container}>
-                <div className={s.logoWrapper}>
-                    <Image className={s.logo} src={Logo} alt="Logo of Samurai Kombucha (white edition)" />
-                </div>
                 <div className={s.menu}>
                     <h3 className={s.caption}>Menu</h3>
                     <nav className={s.navbar}>
@@ -24,8 +21,9 @@ export const Footer: FC<FooterProps> = ({ className }) => {
                         <a href="#wine">Wine</a>
                         <a href="#passion">Passion</a>
                         <a href="#kombucha_classic">Classic</a>
-                        <a href="#matcha">Matcha</a>
-                        <a href="#">Виготовлення</a>
+                        <a href="#cascara_mint">Cascara Mint</a>
+                        <a href="#classic_black">Classic Black</a>
+                        <a href="#creating_combucha">Виготовлення</a>
                         <a href="#where_to_find">Де нас знайти?</a>
                     </nav>
                 </div>
@@ -36,6 +34,9 @@ export const Footer: FC<FooterProps> = ({ className }) => {
                         <a href="#"><Image src={Telegram} alt="icon of telegram" /></a>
                         <a href="https://www.instagram.com/samurai.kombucha/" target="_blank"><Image src={Instagram} alt="icon of instagram" /></a>
                     </div>
+                </div>
+                <div className={s.logoWrapper}>
+                    <Image className={s.logo} src={Logo} alt="Logo of Samurai Kombucha (white edition)" />
                 </div>
             </div>
         </footer>

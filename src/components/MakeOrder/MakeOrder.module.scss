@@ -1,9 +1,9 @@
 .wrapper {
-  @apply relative w-full flex justify-center min-h-[1080px];
+  @apply relative w-full flex justify-center;
   @apply py-[20px] px-[10px] usm:px-[30px] lg:px-[50px] 2xl:px-[100px] bg-[#FFF] overflow-y-hidden;
 
   .container {
-    @apply w-full max-w-[1920px] overflow-x-visible;
+    @apply w-full max-w-[1920px] min-h-[1080px] overflow-x-visible;
     @apply flex justify-between items-center gap-[20px] lg:gap-[100px] xl:gap-[200px] 2xl:gap-[300px];
     @apply flex-col lg:flex-row;
   }

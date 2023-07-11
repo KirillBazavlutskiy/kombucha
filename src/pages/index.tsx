@@ -47,14 +47,6 @@ const Index: FC<IndexProps> = ({ data }) => {
             />
         </section>
         <section id="tarhun">
-            {/*<FirstProduct*/}
-            {/*    img={Tarhun}*/}
-            {/*    name={data.tarhun.name}*/}
-            {/*    description={data.tarhun.description}*/}
-            {/*    symbols={data.tarhun.symbols}*/}
-            {/*    isMobile={isMobile}*/}
-            {/*    displacement={[ '0.33 МЛ', '0.75 МЛ' ]}*/}
-            {/*/>*/}
             <Product
                 order={'reversed'}
                 background={'transparent'}

@@ -33,10 +33,11 @@ export const Header: FC<HeaderProps> = ({ className }) => {
                         <a href="#wine">Wine</a>
                         <a href="#passion">Passion</a>
                         <a href="#kombucha_classic">Classic</a>
-                        <a href="#matcha">Matcha</a>
+                        <a href="#cascara_mint">Cascara Mint</a>
+                        <a href="#classic_black">Classic Black</a>
                     </nav>
                     <nav className={s.navbar}>
-                        <a href="#">Виготовлення</a>
+                        <a href="#creating_combucha">Виготовлення</a>
                         <a href="#where_to_find">Де нас знайти?</a>
                     </nav>
                 </div>
