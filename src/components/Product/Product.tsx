@@ -91,15 +91,32 @@ const Product: FC<ProductProps> = (
                 : (
                     <div className={s.wrapper} style={{ backgroundColor: background }}>
                         <div className={s.container}>
-                            <h2 className={cn(s.name, 'text-center', order == 'reversed' ? 'xl:text-left' : 'xl:text-right')}>{name}</h2>
+                            <h2 className={
+                                cn(
+                                    s.name,
+                                    'text-center',
+                                    order == 'reversed' ? 'xl:text-left' : 'xl:text-right',
+                                    color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                )}>
+                                {name}
+                            </h2>
                             <div className={cn(s.content, order == 'reversed' && [s.reversed])}>
-                                <div className={cn(s.text, order == 'reversed' && [s.toRight])}>{description}</div>
+                                <div className={
+                                    cn(
+                                        s.text,
+                                        order == 'reversed' && [s.toRight],
+                                        color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                    )
+                                }>{description}</div>
                                 <div className={cn(s.model, order == 'reversed' ? s.start : s.end )}>
                                     <Image src={img} alt="Can" />
                                 </div>
                             </div>
                             <div className={cn(s.options, order == 'reversed' ? 'flex-col xl:flex-row' : 'flex-col xl:flex-row-reverse')}>
-                                <h3 className={s.symbols}>{symbols}</h3>
+                                <h3 className={cn(
+                                    s.symbols,
+                                    color === 'white' ? 'text-[#fff]' : 'text-[#000]'
+                                )}>{symbols}</h3>
                             </div>
                         </div>
                     </div>

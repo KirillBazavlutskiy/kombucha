@@ -3,21 +3,25 @@
   @apply flex justify-center;
 
   .container {
-    @apply w-full max-w-[1920px] flex flex-col items-center gap-[100px] lg:gap-[160px];
+    @apply w-full max-w-[1920px] flex flex-col items-center gap-[34px];
 
     h2 {
       @apply w-full text-center xl:text-left font-sverdlovsk;
       @apply 2xl:text-[96px] xl:text-[86px] lg:text-[72px] sm:text-[64px] usm:text-[46px] text-[40px];
     }
 
-    .rect {
-      @apply bg-[#B42626] w-full max-w-[712px] aspect-square rounded-full flex justify-center items-center;
-      @apply py-[14%] px-[8%];
+    .rectDescription {
+      @apply relative h-[712px] flex justify-center items-center;
 
       p {
-        @apply font-pobeda text-[#fff];
-        @apply w-full text-center font-normal leading-[70px];
+        @apply font-pobeda text-[#fff] relative z-[2];
+        @apply w-full max-w-[604px] text-center font-normal leading-[70px];
         @apply 2xl:text-[60px] xl:text-[56px] lg:text-[50px] sm:text-[44px] usm:text-[32px] text-[28px];
+      }
+
+      .rect {
+        @apply bg-[#B42626] w-[712px] aspect-square rounded-full z-[1];
+        @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
       }
     }
 
