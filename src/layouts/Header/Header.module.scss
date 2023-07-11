@@ -10,7 +10,7 @@
   }
 
   .productList {
-    @apply hidden xl:flex items-center gap-[20px];
+    @apply hidden 2xl:flex items-center gap-[20px];
 
     .productListBtn {
       @apply flex items-center gap-[5px] pb-[5x];
@@ -32,7 +32,7 @@
     }
 
     .navbar {
-      @apply flex items-center gap-[18px] overflow-x-hidden max-w-[600px] transition-all;
+      @apply flex items-center gap-[18px] overflow-x-hidden max-w-[800px] transition-all;
 
       a {
         @apply font-montserrat text-[20px] font-bold relative overflow-x-visible;
@@ -70,7 +70,7 @@
   }
 
   .sidebarMenu {
-    @apply flex flex-col items-start xl:hidden pt-[80px] px-[20px];
+    @apply flex flex-col items-start 2xl:hidden pt-[80px] px-[20px];
     @apply fixed top-0 right-0 bottom-0;
     @apply w-[250px] z-[20];
     @apply transition-all;
