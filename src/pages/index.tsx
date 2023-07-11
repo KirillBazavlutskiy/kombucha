@@ -7,7 +7,6 @@ import path from "path";
 
 import { Layout } from '@/layouts/Layout';
 import Hero from '@/components/Hero/Hero';
-import FirstProduct from '@/components/FirstProduct/FirstProduct';
 import Product from '@/components/Product/Product';
 import WhereToFind from '@/components/WhereToFind/WhereToFind';
 
@@ -139,7 +138,7 @@ const Index: FC<IndexProps> = ({ data }) => {
             <MakeOrder />
         </section>
         <section id="where_to_find">
-            <WhereToFind />
+            <WhereToFind locations={data.whereToFind.locations} />
         </section>
     </Layout>
   )

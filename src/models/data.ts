@@ -7,6 +7,7 @@ export interface Data {
     cascara_mint: IProduct;
     classic_black: IProduct;
     creating_combucha: ICreatingCombucha;
+    whereToFind: WhereToFind;
 };
 
 export interface IHero {
@@ -26,4 +27,19 @@ export interface ICreatingCombucha {
     title: string;
     description: string;
     symbols: string;
+}
+
+export interface WhereToFind {
+    locations: Location[];
+}
+
+export interface Location {
+    city: string;
+    places: Place[];
+}
+
+export interface Place {
+    name: string;
+    address: string;
+    mapsLink: string;
 }

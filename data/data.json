@@ -37,5 +37,64 @@
         "title": "How is your favorite kombucha made?",
         "description": "Кожна пляшка ボトル проходить довгий шлях, від ферментації до розливу. Кожна унікальна どくとく і має свою історію та смак. Обери ту 口をつける, яка підійде для твого шляху!",
         "symbols": "すべてがどのように機能するか"
+    },
+    "whereToFind": {
+        "locations": [
+            {
+                "city": "Дніпро",
+                "places": [
+                    {
+                        "name": "Eight Coffeebar",
+                        "address": "вул. Гоголя 9",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21163.505222506312!2d35.04975089472422!3d48.46730875219446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe3c1b1c8484b%3A0xf1ceea248ad6cc94!2sEight%20Coffeebar!5e0!3m2!1sru!2sua!4v1689098841916!5m2!1sru!2sua"
+                    },
+                    {
+                        "name": "Flat brewbar",
+                        "address": "вул. Барікадна 22",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.6690072662136!2d35.050820192134296!3d48.46287995441723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe3173a6c8f8b%3A0x1fe6c5e7f4cc178e!2sFlat%20Brewbar!5e0!3m2!1sru!2sua!4v1689099396227!5m2!1sru!2sua"
+                    },
+                    {
+                        "name": "Gastronomie Bistro",
+                        "address": "вул. Сергія Єфремова 22",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d786.5981455354422!2d35.06437720232554!3d48.460553995677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2d0208f4f57%3A0x8ed3417ea65a74ce!2z0YPQuy4g0KHQtdGA0LPQtdGPINCV0YTRgNC10LzQvtCy0LAsIDIyLCDQlNC90LXQv9GALCDQlNC90LXQv9GA0L7Qv9C10YLRgNC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNDkwMDA!5e0!3m2!1sru!2sua!4v1689099669209!5m2!1sru!2sua"
+                    },
+                    {
+                        "name": "Radio wave",
+                        "address": "вул. Мєчнікова 7",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.5128572189706!2d35.03551507665162!3d48.4658756282485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe3c528696123%3A0x2dca2d2778d3cbda!2z0JrQsNCyJ9GP0YDQvdGPINCg0LDQtNGW0L7QpdCy0LjQu9GP!5e0!3m2!1sru!2sua!4v1689099753720!5m2!1sru!2sua"
+                    },
+                    {
+                        "name": "Share Coffee",
+                        "address": "вул. Тітова 23",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2226.147733585931!2d35.004357995767954!3d48.43060812010484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe3535d93a24f%3A0x3453d7db73b92cad!2sShare%20coffee!5e0!3m2!1sru!2sua!4v1689099854140!5m2!1sru!2sua"
+                    },
+                    {
+                        "name": "Antique Coffee",
+                        "address": "вул. Гагаріна 27",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1573.522714730478!2d35.05941903329885!3d48.45002061984097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe32a705a703f%3A0x8f3ace08efa00312!2z0L_RgNC-0YHQvy4g0JPQsNCz0LDRgNC40L3QsCwgMjcsINCU0L3QtdC_0YAsINCU0L3QtdC_0YDQvtC_0LXRgtGA0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA0OTAwMA!5e0!3m2!1sru!2sua!4v1689100053252!5m2!1sru!2sua"
+                    }
+                ]
+            },
+            {
+                "city": "Чернігів",
+                "places": [
+                    {
+                        "name": "Myata",
+                        "address": "Проспект Перемоги, 119а",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d261.0790282664172!2d31.30440201279655!3d51.498238386063754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d548f4798cb0ab%3A0xf260d32660cce3c5!2z0KbQstC10YLQvtGH0L3QsNGPINC60L7RhNC10LnQvdGPICJNWUFUQSI!5e0!3m2!1sru!2sua!4v1689100604457!5m2!1sru!2sua"
+                    }
+                ]
+            },
+            {
+                "city": "Запоріжжя",
+                "places": [
+                    {
+                        "name": "Enjoy Coffee & deserts",
+                        "address": "Вул. Добролюбова, 17",
+                        "mapsLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18008.739735150062!2d35.08099173415912!3d47.85866930406991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc67f54a47f1a1%3A0x379a011c1e742833!2sEnjoy%3A%20Coffee%20%26%20Desserts!5e0!3m2!1sru!2sua!4v1689100711593!5m2!1sru!2sua"
+                    }
+                ]
+            }
+        ]
     }
 }

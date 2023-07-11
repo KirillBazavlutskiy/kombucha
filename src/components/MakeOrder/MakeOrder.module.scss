@@ -1,6 +1,6 @@
 .wrapper {
   @apply relative w-full flex justify-center min-h-[1080px];
-  @apply p-[10px] usm:p-[30px] lg:px-[50px] 2xl:px-[100px] py-[50px] bg-[#FFF] overflow-y-hidden;
+  @apply py-[20px] px-[10px] usm:px-[30px] lg:px-[50px] 2xl:px-[100px] bg-[#FFF] overflow-y-hidden;
 
   .container {
     @apply w-full max-w-[1920px] overflow-x-visible;

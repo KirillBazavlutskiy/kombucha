@@ -1,5 +1,6 @@
 .wrapper {
-  @apply w-full flex justify-center px-[40px];
+  @apply w-full flex justify-center;
+  @apply py-[20px] px-[10px] usm:px-[30px] lg:px-[50px] 2xl:px-[100px];
 }
 
 .container {

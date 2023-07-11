@@ -1,14 +1,18 @@
 import { FC, useEffect, useState } from "react";
-import Image from 'next/image'
 import { motion } from "framer-motion"
+import { Location } from '@/models/data';
 
 import s from './WhereToFind.module.scss';
 
-import RollPart from "../../images/roll_part.png";
-import Eight from "../../images/maps/eight.png";
+interface WhereToFindProps {
+    locations: Location[];
+}
 
-const WhereToFind: FC = () => {
-    const [currentMap, setCurrentMap] = useState(0);
+
+const WhereToFind: FC<WhereToFindProps> = ({ locations }) => {
+    const [currentPlace, setCurrentPlace] = useState(0);
+    const [currentCity, setCurrentCity] = useState(0);
+    const [citiesListActive, setCitiesListActive] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -19,46 +23,26 @@ const WhereToFind: FC = () => {
         }
     }, [isOpen]);
 
-    const maps = [
-        Eight,
-        Eight,
-        Eight,
-        Eight,
-        Eight,
-        Eight
-    ]
-
-    const locations = [
-        {
-            name: "eight coffeebar",
-            address: "вул. Гоголя 9"
-        },
-        {
-            name: "Flat brewbar",
-            address: "вул. Барікадна 22"
-        },
-        {
-            name: "gastronomie bistro",
-            address: "вул. Сергія Єфремова 22"
-        },
-        {
-            name: "maemo prosit",
-            address: "вул. Сергія Єфремова 22"
-        },
-        {
-            name: "twice coffeebar",
-            address: "вул. Дмитра Яворницького 34"
-        },
-        {
-            name: "share coffee",
-            address: "вул. Тітова 23"
-        }
-    ]
-
     return (
         <div className={s.wrapper}>
             <div className={s.container}>
-                <h2 className={s.caption}>Де нас знайти?</h2>
+                <h2 className={s.caption}>
+                    Де нас знайти?
+                    <button onClick={() => setCitiesListActive(prev => !prev)}>
+                        {locations[currentCity].city}
+                        <svg
+                            className={citiesListActive ? s.citiesListActive : s.citiesListNotActive}
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <ul className={citiesListActive ? s.citiesListActive : s.citiesListNotActive}>{
+                            locations.map((location, index) =>
+                                index !== currentCity && <li onClick={() => setCurrentCity(index)}>{location.city}</li>
+                            )
+                        }</ul>
+                    </button>
+                </h2>
                 <motion.div
                     initial={false}
                     animate={isOpen ? "open" : "closed"}
@@ -66,16 +50,16 @@ const WhereToFind: FC = () => {
                 >
                     <ul className={s.list}>
                         {
-                            locations.map((el, index) => (
+                            locations[currentCity].places.map((el, index) => (
                                 <motion.li
                                     whileTap={{ scale: 0.9 }}
                                     key={index}
                                 >
                                     <button
-                                        className={currentMap == index ? s.active : s.notActive}
+                                        className={currentPlace == index ? s.active : s.notActive}
                                         onClick={() => {
                                             setIsOpen(!isOpen);
-                                            setCurrentMap(index);
+                                            setCurrentPlace(index);
                                         }}
                                     >
                                         <h3>{el.name}</h3>
@@ -86,86 +70,11 @@ const WhereToFind: FC = () => {
                         }
                     </ul>
                     <div className={s.map}>
-                        <motion.div
-                            variants={{
-                                open: {
-                                    y: "250%",
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.7,
-                                    }
-                                },
-                                closed: {
-                                    y: 0,
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.3
-                                    }
-                                }
-                            }}
-                            style={{ pointerEvents: isOpen ? "auto" : "none" }}
-                            className={s.topRoll}
-                        >
-                            <Image
-                                src={RollPart}
-                                alt="Top part of the roll for Google maps"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            variants={{
-                                open: {
-                                    y: 0,
-                                    scaleY: 0.1,
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.7,
-                                    }
-                                },
-                                closed: {
-                                    y: 0,
-                                    scaleY: 1,
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.3
-                                    }
-                                }
-                            }}
-                            style={{ pointerEvents: isOpen ? "auto" : "none" }}
-                        >
-                            <Image className={s.locationImg} src={maps[currentMap]} alt="Map" />
-                        </motion.div>
-                        <motion.div
-                            variants={{
-                                open: {
-                                    y: "-250%",
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.7,
-                                    }
-                                },
-                                closed: {
-                                    y: 0,
-                                    transition: {
-                                        type: "spring",
-                                        bounce: 0,
-                                        duration: 0.3
-                                    }
-                                }
-                            }}
-                            style={{ pointerEvents: isOpen ? "auto" : "none" }}
-                            className={s.bottomRoll}
-                        >
-                            <Image
-                                src={RollPart}
-                                alt="Bottom part of the roll for Google maps"
-                            />
-                        </motion.div>
+                        <iframe
+                            src={locations[currentCity].places[currentPlace].mapsLink}
+                            width="100%" height="100%" loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </motion.div>
                 <h3 className={s.symbols}>私たちを見つける場所</h3>
@@ -175,7 +84,3 @@ const WhereToFind: FC = () => {
 };
 
 export default WhereToFind;
-
-function userState(arg0: number): [any, any] {
-    throw new Error('Function not implemented.');
-}
