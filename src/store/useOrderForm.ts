@@ -4,7 +4,8 @@ export interface ProductInfo {
     name: string;
     smallBottle: number;
     bigBottle: number;
-    price: number;
+    priceSmall: number;
+    priceBig: number;
 }
 
 interface IOrderForm {
@@ -33,37 +34,43 @@ export const useOrderForm = create<IUseOrderForm>(set => {
                     name: "Tarragon",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 85
+                    priceSmall: 85,
+                    priceBig: 215,
                 },
                 {
                     name: "Wine",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 85
+                    priceSmall: 85,
+                    priceBig: 215,
                 },
                 {
                     name: "Passion",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 85
+                    priceSmall: 85,
+                    priceBig: 215,
                 },
                 {
                     name: "Kombucha classic",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 70
+                    priceSmall: 70,
+                    priceBig: 185,
                 },
                 {
                     name: "CLassic black",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 85
+                    priceSmall: 85,
+                    priceBig: 215,
                 },
                 {
                     name: "Cascara Mint",
                     smallBottle: 0,
                     bigBottle: 0,
-                    price: 85
+                    priceSmall: 85,
+                    priceBig: 215,
                 },
             ],
         },

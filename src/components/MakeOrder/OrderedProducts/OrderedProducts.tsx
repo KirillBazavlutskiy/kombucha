@@ -23,7 +23,7 @@ const OrderedProducts: FC = () => {
                     <span>
                         {
                             orderForm.products.reduce((orderPrice: number, product) =>
-                                (orderPrice + product.smallBottle * product.price + product.bigBottle * product.price), 0
+                                (orderPrice + product.smallBottle * product.priceSmall + product.bigBottle * product.priceBig), 0
                             )
                         } UAH
                     </span>
