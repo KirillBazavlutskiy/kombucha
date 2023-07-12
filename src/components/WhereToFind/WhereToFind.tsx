@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import {FC, useEffect, useLayoutEffect, useState} from "react";
 import { motion } from "framer-motion"
 import { Location } from '@/models/data';
 
@@ -10,8 +10,8 @@ interface WhereToFindProps {
 
 
 const WhereToFind: FC<WhereToFindProps> = ({ locations }) => {
-    const [currentPlace, setCurrentPlace] = useState(0);
     const [currentCity, setCurrentCity] = useState(0);
+    const [currentPlace, setCurrentPlace] = useState(0);
     const [citiesListActive, setCitiesListActive] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +38,13 @@ const WhereToFind: FC<WhereToFindProps> = ({ locations }) => {
                         </svg>
                         <ul className={citiesListActive ? s.citiesListActive : s.citiesListNotActive}>{
                             locations.map((location, index) =>
-                                index !== currentCity && <li onClick={() => setCurrentCity(index)}>{location.city}</li>
+                                index !== currentCity &&
+                                <li
+                                    key={location.city}
+                                    onClick={() => {
+                                        setCurrentPlace(0);
+                                        setCurrentCity(index);
+                                    }}>{location.city}</li>
                             )
                         }</ul>
                     </button>
