@@ -19,7 +19,7 @@ interface IOrderForm {
 interface IUseOrderForm {
     orderForm: IOrderForm;
     setOrderForm: (form: IOrderForm) => void;
-    setProduct: (productName: string, product: ProductInfo) => void;
+    setProduct: (orderForm: IOrderForm, productName: string, product: ProductInfo) => void;
 }
 
 export const useOrderForm = create<IUseOrderForm>(set => {
@@ -77,8 +77,7 @@ export const useOrderForm = create<IUseOrderForm>(set => {
         setOrderForm: (form) => {
             set({orderForm: form})
         },
-        setProduct: (productName: string, product: ProductInfo) => {
-            const orderForm = state.orderForm;
+        setProduct: (orderForm: IOrderForm, productName: string, product: ProductInfo) => {
             const productIndex = orderForm.products.findIndex(product => product.name === productName);
             const newProducts = orderForm.products;
             orderForm.products[productIndex] = product;

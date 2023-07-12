@@ -37,7 +37,7 @@
     .btn {
       @apply flex justify-center;
 
-      a {
+      button {
         @apply font-montserrat;
         @apply bg-[#B42626]/90 text-[#fff] rounded-[50px] transition-all;
         @apply font-bold text-[24px] px-[50px] py-[15px];
