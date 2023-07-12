@@ -48,7 +48,7 @@ export const Navigation = () => {
             </button>
             <div className={cn(s.list, listState ? s.listOpen : s.listClose)}>
                 <ul>
-                    <li><a href="#tarhun">Тархун</a></li>
+                    <li><a href="#tarhun">Tarragon</a></li>
                     <li><a href="#wine">Wine</a></li>
                     <li><a href="#passion">Passion</a></li>
                     <li><a href="#kombucha_classic">Classic</a></li>

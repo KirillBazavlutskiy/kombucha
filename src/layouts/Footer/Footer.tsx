@@ -3,6 +3,9 @@ import Image from "next/image";
 import cn from 'classnames';
 
 import s from './Footer.module.scss';
+
+import Sakura from '../../images/sakura_footer.png';
+
 import Logo from "@/images/general/logo_footer.svg";
 import Telegram from "@/images/icons/telegram.svg";
 import Instagram from "@/images/icons/instagram.svg";
@@ -14,6 +17,7 @@ export const Footer: FC<FooterProps> = ({ className }) => {
     return (
         <footer className={cn(s.wrapper, className)}>
             <div className={s.container}>
+                <Image className={s.sakura} src={Sakura} alt={'sakura-footer'} />
                 <div className={s.menu}>
                     <h3 className={s.caption}>Menu</h3>
                     <nav className={s.navbar}>

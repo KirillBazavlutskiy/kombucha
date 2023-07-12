@@ -55,7 +55,7 @@
     @apply transition-all;
 
     &.visible {
-      @apply block xl:hidden;
+      @apply block 2xl:hidden;
       animation: .2s overlay;
     }
   }

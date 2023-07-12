@@ -29,7 +29,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
 
                     </button>
                     <nav className={cn(s.navbar, !isProductListOpen && s.listClose)}>
-                        <a href="#tarhun">Тархун</a>
+                        <a href="#tarhun">Tarragon</a>
                         <a href="#wine">Wine</a>
                         <a href="#passion">Passion</a>
                         <a href="#kombucha_classic">Classic</a>

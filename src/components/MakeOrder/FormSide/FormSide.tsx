@@ -7,10 +7,17 @@ const FormSide = () => {
 
     const { orderForm, setOrderForm } = useOrderForm();
 
+    const recipient = "samurai.cooperative@gmail.com";
+    const products = orderForm.products
+        .filter(p => p.bigBottle + p.smallBottle !== 0)
+        .map(p => `${p.name}: 0.33МЛ ${p.smallBottle} 0.75МЛ ${p.smallBottle}`)
+
     return (
         <div className={s.container}>
             <h2>Доставка</h2>
-            <form className={s.form} onSubmit={e => e.preventDefault()}>
+            <form className={s.form} onSubmit={e => {
+                // e.preventDefault();
+            }}>
                 <label>
                     <h3>Контактна інформація</h3>
                     <input type="text"
@@ -50,7 +57,10 @@ const FormSide = () => {
                     />
                 </label>
                 <div className={s.btn}>
-                    <button type='submit'>Замовити</button>
+                    {/*<button type='submit'>Замовити</button>*/}
+                    <a href={`mailto:${encodeURIComponent(recipient)}?subject=Замовлення&body=Місто:${encodeURIComponent(orderForm.cityAddress)}\nВідділення нової пошти:${encodeURIComponent(orderForm.mailNumber)}\nТелефон:${encodeURIComponent(orderForm.phone)}\nЗамовлення:${encodeURIComponent(products.join('\n'))}`}>
+                        Замовити
+                    </a>
                 </div>
             </form>
             <h3>宅配</h3>
