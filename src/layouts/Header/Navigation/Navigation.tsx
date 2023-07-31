@@ -58,6 +58,7 @@ export const Navigation = () => {
             </div>
             <ul className={s.otherItemsList}>
                 <li><a href="#creating_combucha">Виготовлення</a></li>
+                <li><a href="#make_order_form">Зробити замовлення</a></li>
                 <li><a href="#where_to_find">Де нас знайти?</a></li>
             </ul>
         </>

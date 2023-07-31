@@ -7,13 +7,8 @@
   @apply 2xl:py-[80px] xl:py-[70px] lg:py-[60px] sm:py-[55px] py-[50px];
 
   .content {
-    @apply grid items-center justify-between w-full;
+    @apply flex flex-col 2xs:flex-row items-center justify-between w-full;
     @apply 2xl:gap-[50px] sm:gap-[40px] gap-[30px];
-    grid-template-columns: 3fr 2fr;
-
-    @media (max-width: 1366px) {
-      grid-template-columns: 1fr;
-    }
 
     .text {
       @apply font-pobeda max-w-[950px] flex;
@@ -26,16 +21,7 @@
     }
 
     .model {
-      @apply justify-end flex;
-      @media (max-width: 1366px) {
-        @apply justify-center p-[5%];
-      }
-      .canvas {
-        @apply w-full;
-        * {
-          @apply aspect-square w-full;
-        }
-      }
+      @apply aspect-square w-[400px] 2xs:w-[748px];
     }
   }
 

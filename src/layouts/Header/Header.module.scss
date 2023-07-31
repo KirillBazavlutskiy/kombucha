@@ -16,7 +16,7 @@
       @apply flex items-center gap-[5px] pb-[5x];
 
       p {
-        @apply font-montserrat text-[20px] font-bold relative;
+        @apply font-montserrat text-[16px] font-bold relative;
         @apply overflow-x-visible;
       }
 
@@ -35,7 +35,7 @@
       @apply flex items-center gap-[18px] overflow-x-hidden max-w-[800px] transition-all;
 
       a {
-        @apply font-montserrat text-[20px] font-bold relative overflow-x-visible;
+        @apply font-montserrat text-[16px] font-bold relative overflow-x-visible;
         @apply border-b-[3px] border-[#FF0000]/0 transition-all;
 
         &:hover {

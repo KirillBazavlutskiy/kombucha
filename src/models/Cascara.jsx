@@ -23,7 +23,7 @@ export function Cascara(props) {
         }
     });
     useEffect(() => {
-        groupRef.current.position.y -= 13;
+        groupRef.current.position.y -= 12.5;
         groupRef.current.rotation.y = minAngle;
     })
 

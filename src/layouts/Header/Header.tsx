@@ -26,7 +26,6 @@ export const Header: FC<HeaderProps> = ({ className }) => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
-
                     </button>
                     <nav className={cn(s.navbar, !isProductListOpen && s.listClose)}>
                         <a href="#tarhun">Tarragon</a>
@@ -38,6 +37,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
                     </nav>
                     <nav className={s.navbar}>
                         <a href="#creating_combucha">Виготовлення</a>
+                        <a href="#make_order_form">Зробити замовлення</a>
                         <a href="#where_to_find">Де нас знайти?</a>
                     </nav>
                 </div>
