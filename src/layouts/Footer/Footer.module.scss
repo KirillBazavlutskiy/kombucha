@@ -17,11 +17,11 @@
   }
 
   .sakura {
-    @apply hidden 2xl:block h-full absolute left-0 top-0;
+    @apply hidden 2xl:block h-full absolute left-0 top-0 z-[0] opacity-30;
   }
 
   .menu {
-    @apply flex flex-col items-center gap-[15px];
+    @apply relative z-[1] flex flex-col items-center gap-[15px];
 
     .caption {
       @apply text-[64px] uppercase font-thin;
@@ -34,7 +34,7 @@
   }
 
   .contacts {
-    @apply flex flex-col items-center gap-[15px] mb-[0px] md:mb-[100px];
+    @apply relative z-[1] flex flex-col items-center gap-[15px] mb-[0px] md:mb-[100px];
 
     .caption {
       @apply text-[64px] font-thin;

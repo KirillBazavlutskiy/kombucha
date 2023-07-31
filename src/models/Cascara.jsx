@@ -11,20 +11,31 @@ export function Cascara(props) {
 
     const groupRef = useRef();
 
-    const rotationSpeed = 0.006;
-    const minAngle = 0.8;
-    const maxAngle = 3.9;
-    let direction = 1;
+    const rotationSpeedY = 0.006;
+    const minAngleY = 1.2;
+    const maxAngleY = 3.2;
+    let directionY = 1;
+
+    const rotationSpeedZ = 0.00005;
+    // const rotationSpeedZ = 0.01;
+    const minAngleZ = -0.01;
+    const maxAngleZ = 0.01;
+    let directionZ = 1;
 
     useFrame(() => {
-        groupRef.current.rotation.y += rotationSpeed * direction;
-        if (groupRef.current.rotation.y < minAngle || groupRef.current.rotation.y > maxAngle) {
-            direction *= -1;
+        groupRef.current.rotation.y += rotationSpeedY * directionY;
+        if (groupRef.current.rotation.y < minAngleY || groupRef.current.rotation.y > maxAngleY) {
+            directionY *= -1;
+        }
+
+        groupRef.current.rotation.z += rotationSpeedZ * directionZ;
+        if (groupRef.current.rotation.z < minAngleZ || groupRef.current.rotation.z > maxAngleZ) {
+            directionZ *= -1;
         }
     });
     useEffect(() => {
         groupRef.current.position.y -= 12.5;
-        groupRef.current.rotation.y = minAngle;
+        groupRef.current.rotation.y = minAngleY;
     })
 
   const { nodes, materials } = useGLTF('/models/Cascara/Cascara.gltf')

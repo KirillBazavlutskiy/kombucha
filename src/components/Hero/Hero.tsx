@@ -50,10 +50,17 @@ const Hero: FC<HeroProps> = ({ description, symbols, isMobile }) => {
                                             className={s.canvas}
                                             camera={{ near: 2, position: [0, 0, 20], rotation: [0, 0, 0], zoom: 1}}>
                                             <OrbitControls enabled={false} />
-                                            <directionalLight
+                                            <hemisphereLight intensity={0.2} />
+                                            <spotLight
                                                 position={[6, 10, 25]}
-                                                intensity={0.6}
+                                                intensity={0.8}
+                                                penumbra={1}
                                                 castShadow={false}
+                                            />
+                                            <directionalLight
+                                                position={[-10, 0, -20]}
+                                                intensity={5}
+                                                castShadow={true}
                                             />
                                             <Cascara />
                                         </Canvas>
