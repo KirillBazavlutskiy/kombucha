@@ -48,11 +48,11 @@ const Hero: FC<HeroProps> = ({ description, symbols, isMobile }) => {
                                     <Suspense>
                                         <Canvas
                                             className={s.canvas}
-                                            camera={{ near: 2, position: [0, 0, 25], rotation: [0, 0, 0], zoom: 1}}>
+                                            camera={{ near: 2, position: [0, 0, 20], rotation: [0, 0, 0], zoom: 1}}>
                                             <OrbitControls enabled={false} />
                                             <directionalLight
                                                 position={[6, 10, 25]}
-                                                intensity={1.1}
+                                                intensity={0.6}
                                                 castShadow={false}
                                             />
                                             <Cascara />

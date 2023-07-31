@@ -10,9 +10,21 @@ import {useFrame} from "@react-three/fiber";
 export function Cascara(props) {
 
     const groupRef = useRef();
-    useFrame(() => groupRef.current.rotation.y += 0.01);
+
+    const rotationSpeed = 0.006;
+    const minAngle = 0.8;
+    const maxAngle = 3.9;
+    let direction = 1;
+
+    useFrame(() => {
+        groupRef.current.rotation.y += rotationSpeed * direction;
+        if (groupRef.current.rotation.y < minAngle || groupRef.current.rotation.y > maxAngle) {
+            direction *= -1;
+        }
+    });
     useEffect(() => {
-        groupRef.current.position.y -= 12;
+        groupRef.current.position.y -= 13;
+        groupRef.current.rotation.y = minAngle;
     })
 
   const { nodes, materials } = useGLTF('/models/Cascara/Cascara.gltf')
