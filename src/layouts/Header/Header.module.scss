@@ -13,7 +13,7 @@
     @apply hidden 2xl:flex items-center gap-[20px];
 
     .productListBtn {
-      @apply flex items-center gap-[5px] pb-[5x];
+      @apply flex items-center gap-[5px] mb-[4px];
 
       p {
         @apply font-montserrat text-[16px] font-bold relative;

@@ -76,7 +76,7 @@
   }
 
   .options {
-    @apply w-full flex items-center gap-[20px];
+    @apply w-full flex items-center justify-between gap-[20px];
 
     .symbols {
       @apply text-center opacity-[0.7];
@@ -84,23 +84,13 @@
       @apply 2xl:leading-[70px] lg:leading-[60px] leading-[52px];
     }
 
-    .displacement {
-      @apply flex gap-[20px];
+    a {
+      @apply font-montserrat;
+      @apply bg-[#B42626]/90 text-[#fff] rounded-[50px] transition-all;
+      @apply font-bold text-[24px] px-[50px] py-[15px];
 
-      .displacementOption {
-        @apply bg-[#000]/20 backdrop-blur-[2px];
-        @apply rounded-[3px] px-[22px] py-[10px];
-        @apply transition-all shadow-none cursor-pointer;
-
-        span {
-          @apply font-pobeda font-bold;
-          @apply 2xl:text-[34px] lg:text-[22px] text-[18px];
-          @apply 2xl:leading-[36px] lg:leading-[26px] leading-[20px];
-        }
-
-        &:hover {
-          @apply bg-[#000]/30 shadow-[2px_4px_4px_rgba(0,_0,_0,_0.2)];
-        }
+      &:hover {
+        @apply bg-[#B42626]/100 text-[#fff];
       }
     }
   }

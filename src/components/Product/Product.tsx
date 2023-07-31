@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import Image, { StaticImageData } from 'next/image';
 import { motion } from "framer-motion";
 import cn from 'classnames';
@@ -84,6 +84,7 @@ const Product: FC<ProductProps> = (
                                     s.symbols,
                                     color === 'white' ? 'text-[#fff]' : 'text-[#000]'
                                 )}>{symbols}</h3>
+                                <a href='#make_order_form'>Замовити</a>
                             </motion.div>
                         </div>
                     </motion.div>
