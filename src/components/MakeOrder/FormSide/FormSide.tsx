@@ -1,7 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import s from './FormSide.module.scss';
 import cn from "classnames";
-import {useOrderForm} from "@/store/useOrderForm";
+import {IOrderForm, useOrderForm} from "@/store/useOrderForm";
+
+const genetateLink = (orderForm: IOrderForm) => {
+    const recipient = "samurai.cooperative@gmail.com";
+    const products = orderForm.products
+        .filter(p => p.bigBottle + p.smallBottle !== 0)
+        .map(p => `${p.name}: 0.33МЛ x${p.smallBottle} 0.75МЛ x${p.smallBottle}`);
+    return `mailto: ${encodeURIComponent(recipient)}?subject=Замовлення&body=` +
+        `- Місто: ${encodeURIComponent(orderForm.cityAddress)}%0D%0A%0D%0A` +
+        `- Відділення: ${encodeURIComponent(orderForm.mailNumber)}%0D%0A%0D%0A` +
+        `- Телефон: ${encodeURIComponent(orderForm.phone)}%0D%0A%0D%0A` +
+        `- Замовлення:%0D%0A%0D%0A    ${products.join('%0D%0A%0D%0A    ')}`
+}
 
 const FormSide = () => {
 
@@ -12,15 +24,7 @@ const FormSide = () => {
             <h2>Доставка</h2>
             <form className={s.form} onSubmit={e => {
                 e.preventDefault();
-
-                const recipient = "samurai.cooperative@gmail.com";
-                const products = orderForm.products
-                    .filter(p => p.bigBottle + p.smallBottle !== 0)
-                    .map(p => `${p.name}: 0.33МЛ ${p.smallBottle}шт 0.75МЛ ${p.smallBottle}шт`)
-
-                const mailLink = `mailto:${encodeURIComponent(recipient)}?subject=Замовлення&body=Місто:${encodeURIComponent(orderForm.cityAddress)}\nВідділення:${encodeURIComponent(orderForm.mailNumber)}\nТелефон:${encodeURIComponent(orderForm.phone)}\nЗамовлення:${encodeURIComponent(products.join('\n'))}`
-
-                window.location.href = mailLink;
+                window.open(genetateLink(orderForm), '_blank')
             }}>
                 <label>
                     <h3>Контактна інформація</h3>

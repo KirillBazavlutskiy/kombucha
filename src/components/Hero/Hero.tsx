@@ -1,7 +1,7 @@
-import { FC, Suspense } from "react";
+import {FC, Ref, startTransition, Suspense, useRef} from "react";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
+import {Canvas, useFrame} from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 import { IHero } from '@/models/data';
@@ -44,25 +44,21 @@ const Hero: FC<HeroProps> = ({ description, symbols, isMobile }) => {
                         <div className={s.container}>
                             <div className={s.content}>
                                 <div className={s.text}>{description}</div>
-                                {/*<div className={s.model}>*/}
-                                {/*     <Image src={Can} alt="Can" /> */}
-                                {/*    <Suspense>*/}
-                                {/*        <Canvas*/}
-                                {/*            className={s.canvas}*/}
-                                {/*            camera={{ near: 1, position: [0, 0, 0], zoom: 1}}>*/}
-                                {/*            <OrbitControls />*/}
-                                {/*            <hemisphereLight intensity={0.95} />*/}
-                                {/*            <spotLight*/}
-                                {/*                position={[10, 20, 10]}*/}
-                                {/*                angle={0.3}*/}
-                                {/*                penumbra={1}*/}
-                                {/*                intensity={2}*/}
-                                {/*                castShadow*/}
-                                {/*            />*/}
-                                {/*            <Cascara />*/}
-                                {/*        </Canvas>*/}
-                                {/*    </Suspense>*/}
-                                {/*</div>*/}
+                                <div className={s.model}>
+                                    <Suspense>
+                                        <Canvas
+                                            className={s.canvas}
+                                            camera={{ near: 2, position: [0, 0, 25], rotation: [0, 0, 0], zoom: 1}}>
+                                            <OrbitControls enabled={false} />
+                                            <directionalLight
+                                                position={[6, 10, 25]}
+                                                intensity={1.1}
+                                                castShadow={false}
+                                            />
+                                            <Cascara />
+                                        </Canvas>
+                                    </Suspense>
+                                </div>
                             </div>
                             <h3 className={s.symbols}>{symbols}</h3>
                         </div>

@@ -8,7 +8,7 @@ export interface ProductInfo {
     priceBig: number;
 }
 
-interface IOrderForm {
+export interface IOrderForm {
     name: string;
     phone: string;
     cityAddress: string;
@@ -16,7 +16,7 @@ interface IOrderForm {
     products: ProductInfo[];
 }
 
-interface IUseOrderForm {
+interface IUseOrderForm{
     orderForm: IOrderForm;
     setOrderForm: (form: IOrderForm) => void;
     setProduct: (orderForm: IOrderForm, productName: string, product: ProductInfo) => void;
